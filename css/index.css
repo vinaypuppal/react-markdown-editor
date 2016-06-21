@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f9f9f9;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  height: 56px;
+  background: #5c5;
+  color: #fff;
+  box-shadow: 5px 0 8px #888;
+  margin-bottom: 10px;
+}
+header .center h1 {
+  margin: 0;
+  padding: 0;
+  line-height: 56px;
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+.info p {
+  padding: 0;
+  margin: 0;
+  font-size: 21px;
+  color: #888;
+  font-weight: bold;
+}
+
+.container {
+  width: 100%;
+  height: calc(100vh - 95px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.container .editor, .container .preview {
+  -webkit-flex-basis: calc(50% - 20px);
+      -ms-flex-preferred-size: calc(50% - 20px);
+          flex-basis: calc(50% - 20px);
+  height: calc(100vh - 105px);
+  margin: 0 10px;
+  box-shadow: 2px 2px 4px #888, -2px 0px 4px #888;
+  padding: 0 16px;
+}
+.container .editor {
+  border: none;
+  padding: 16px;
+}
+.container .preview {
+  background: #fff;
+  overflow-y: auto;
+}
+.container .preview pre {
+  background: #444;
+  padding: 10px;
+  color: #fff;
+}
+
+@media(max-width: 760px) {
+  .info p:last-child {
+    display: none;
+  }
+
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+  }
+  .container .preview {
+    margin-top: 50px;
+  }
+  .container .preview:before {
+    position: absolute;
+    content: "Preview";
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+    font-size: 21px;
+    color: #888;
+    left: 40%;
+    font-weight: bold;
+  }
+}
